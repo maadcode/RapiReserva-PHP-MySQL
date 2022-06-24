@@ -1,0 +1,1 @@
+<script src="./Views/Scripts/validateToken.js" type="module"></script>
