@@ -1,5 +1,5 @@
 import { ajaxPost } from './ajax.js';
-import { saveToken } from './validateToken.js';
+import { saveToken, validateToken } from './auth.js';
 
 const formSignin = document.querySelector("#form--sign-in");
 const formSignup = document.querySelector("#form--sign-up");
@@ -63,19 +63,21 @@ formSignup.addEventListener('submit', async (ev) => {
   const data = await ajaxPost(url, values);
   if(data.Valid) {
     formSignup.reset();
-    const response = saveToken(data.Id)
-    // if(response) {
-    //   console.log(response);
-    //   debugger;
-    //   window.location.replace("http://localhost/Projects/RapiReserva/Views/Pages/app.php");
-    // } else {
-    //   alertContainer.firstElementChild.lastElementChild.textContent = 'Ocurrió con el token de ingreso.';
-    //   alertContainer.firstElementChild.classList.add('alert--error');
-    //   alertContainer.classList.remove('block');
-    // }
+    const response = await saveToken(data.Id);
+    if(response) {
+      window.location.replace("http://localhost/Projects/RapiReserva/Views/Pages/app.php");
+    } else {
+      alertContainer.firstElementChild.lastElementChild.textContent = 'Ocurrió con el token de ingreso.';
+      alertContainer.firstElementChild.classList.add('alert--error');
+      alertContainer.classList.remove('block');
+    }
   } else {
     alertContainer.firstElementChild.lastElementChild.textContent = 'Ocurrió un error en el registro.';
     alertContainer.firstElementChild.classList.add('alert--error');
     alertContainer.classList.remove('block');
   }
+})
+
+document.addEventListener('DOMContentLoaded', (ev) => {
+  validateToken();
 })

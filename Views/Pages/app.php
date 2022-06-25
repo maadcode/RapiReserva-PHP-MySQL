@@ -34,7 +34,7 @@
             }
         ?>
     </main>
-    <script src="../Scripts/validateToken.js" type="module"></script>
+    <script src="../Scripts/app.js" type="module"></script>
 </section>
 </body>
 </html>

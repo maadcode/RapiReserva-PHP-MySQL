@@ -57,7 +57,6 @@
     </div>  
   </div>
 
-  <script src="../Scripts/validateToken.js" type="module"></script>
   <script src="../Scripts/login.js" type="module"></script>
 </body>
 </html>

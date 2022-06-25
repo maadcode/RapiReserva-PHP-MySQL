@@ -21,17 +21,25 @@
             return $executed;
         }
 
-        public function validateToken($username, $password) {
-            $users = array();
-            $sql = "SELECT Id FROM Users WHERE Username = ? AND Password = ?";
+        public function validateToken($token, $userId) {
+            $isValid = false;
+            $sql = "SELECT CreationDate FROM Auth WHERE Token = ? AND User_Id = ?";
             $statement = $this->connection->prepare($sql);
-            $statement->bind_param("ss", $username, $password);
+            $statement->bind_param("si", $token, $userId);
             $statement->execute();
             $result = $statement->get_result();
-            while ($user = $result->fetch_assoc()) {
-                array_push($users, $user);
+            while ($auth = $result->fetch_assoc()) {
+                $currentDate = new DateTime('now', new DateTimeZone('America/Lima'));
+                $fromBase = new DateTime($auth['CreationDate'], new DateTimeZone('America/Lima'));
+                $diff = $currentDate->diff($fromBase);
+                $hours = $diff->h;
+                $hours = $hours + ($diff->days*24);
+                $inRange = $hours < 24;
+                if($inRange) {
+                    $isValid = true;
+                }  
             }
             $statement->close();
-            return $users;
+            return $isValid;
         }
     }

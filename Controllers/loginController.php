@@ -1,16 +1,5 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if(isset($_POST['validate']) && $_POST['validate']) {
-            $json = array('isValid' => false);
-            if(isset($_POST['token'])) {
-                $json['token'] = $_POST['token'];
-                
-                // $json['isValid'] = true;
-            }
-            $jsonstring = json_encode($json);
-            echo $jsonstring;
-        }
-
         if(isset($_POST['btnSignin'])) {
             require_once "../Models/DAO/userDAO.php";
             $json = array();
@@ -76,4 +65,3 @@
             echo $jsonstring;
         }
     }
-    // $res = password_verify($password, '$2y$10$j72.kpEvDgOcbov9VlYUPuTWqz.D/Gvxg/tX833f5DBOgD8vmveUs');

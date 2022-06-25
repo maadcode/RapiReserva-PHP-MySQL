@@ -1,22 +1,13 @@
 <?php
-require_once "../Models/DAO/authDAO.php";
-require_once "../Models/DTO/authDTO.php";
-
-$json = array('Valid'=>false, 'Token'=>'');
-
-$id = 5;
-$date = date('d-m-y h:i:s');
-$token = password_hash($id.$date, PASSWORD_BCRYPT);;
-$auth = new AuthDTO();
-$auth->setToken($token);
-$auth->setCreationDate($date);
-$auth->setUser($id);
-
-$dao = new AuthDAO();
-$response = $dao->registerAuth($auth);
-if($response) {
-    $json['Valid'] = true;
-    $json['Token'] = $auth->getToken();
-}
-$jsonstring = json_encode($json);
-echo $jsonstring;
+    $names = array('Juan', 'Ana', 'Lucas');
+    print_r($names);
+    echo '<br>';
+    if(count($names) > 2) {
+        echo $names[0];
+    }
+    // $currentDate = new DateTime('now', new DateTimeZone('America/Lima'));
+    // $fromBase = new DateTime('2022-06-24 11:10:20', new DateTimeZone('America/Lima'));
+    // $diff = $currentDate->diff($fromBase);
+    // $hours = $diff->h;
+    // $hours = $hours + ($diff->days*24);
+    // $res = var_dump($hours < 24);

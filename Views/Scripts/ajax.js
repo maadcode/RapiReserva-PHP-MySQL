@@ -1,6 +1,5 @@
 export const ajaxPost = async (url, values) => {
     const uri = url;
-    console.log(values);
     const form = new FormData();
     for (const property in values) {
         form.append(property, values[property])
@@ -10,8 +9,7 @@ export const ajaxPost = async (url, values) => {
         body: form
     })
     .then(res => res.json())
-    .then(response => response)
-    .catch(err => console.error(err));
+    .catch(err => err);
     return data;
 }
 
@@ -21,7 +19,6 @@ export const ajaxGet = async (url) => {
         method: 'GET'
     })
     .then(res => res.json())
-    .then(response => response)
-    .catch(err => console.error('Error:', err));
+    .catch(err => err);
     return data;
 }
