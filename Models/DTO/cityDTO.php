@@ -1,7 +1,7 @@
 <?php
     class CityDTO {
-        private $id;
-        private $name;
+        public $id;
+        public $name;
 
         public function getId() {
             return $this->id;

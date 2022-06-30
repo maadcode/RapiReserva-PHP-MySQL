@@ -1,15 +1,15 @@
 <?php
     class PaymentDTO {
-        private $id;
-        private $typeCard;
-        private $lastNumbers;
-        private $nameCard;
-        private $token;
-        private $totalPrice;
-        private $reservaPrice;
-        private $paymentDate;
-        private $voucherCode;
-        private $reservation;
+        public $id;
+        public $typeCard;
+        public $lastNumbers;
+        public $nameCard;
+        public $token;
+        public $totalPrice;
+        public $reservaPrice;
+        public $paymentDate;
+        public $voucherCode;
+        public $reservation;
 
         public function getId() {
             return $this->id;

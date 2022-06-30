@@ -1,11 +1,11 @@
 <?php
     class SalesDTO {
-        private $id;
-        private $estate;
-        private $urlAction;
-        private $urlBanner;
-        private $creationDate;
-        private $creationUser;
+        public $id;
+        public $estate;
+        public $urlAction;
+        public $urlBanner;
+        public $creationDate;
+        public $creationUser;
 
         public function getId() {
             return $this->id;

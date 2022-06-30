@@ -1,7 +1,7 @@
 <?php
     class CategoryDTO {
-        private $id;
-        private $description;
+        public $id;
+        public $description;
 
         public function getId() {
             return $this->id;

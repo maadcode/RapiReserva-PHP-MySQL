@@ -1,8 +1,8 @@
 <?php
     class AuthDTO {
-        private $token;
-        private $creationDate;
-        private $user;
+        public $token;
+        public $creationDate;
+        public $user;
 
         public function getToken() {
             return $this->token;

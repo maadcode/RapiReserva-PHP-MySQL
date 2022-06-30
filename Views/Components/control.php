@@ -2,5 +2,5 @@
 
 <div class="control">
     <i class="<?= $icon ?>"></i>
-    <input type="<?= $typeInput ?>" placeholder="<?= $placeholderInput ?>" id="<?= $name ?>" name="<?= $name ?>" />
+    <input type="<?= $typeInput ?>" placeholder="<?= $placeholderInput ?>" id="<?= $name ?>" name="<?= $name ?>" <?= $isDisabled ? 'disabled' : '' ?> />
 </div>

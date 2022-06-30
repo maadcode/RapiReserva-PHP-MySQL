@@ -1,15 +1,15 @@
 <?php
     class UserDTO {
-        private $id;
-        private $username;
-        private $email;
-        private $password;
-        private $fullname;
-        private $dni;
-        private $phone;
-        private $address;
-        private $urlAvatar;
-        private $city;
+        public $id;
+        public $username;
+        public $email;
+        public $password;
+        public $fullname;
+        public $dni;
+        public $phone;
+        public $address;
+        public $urlAvatar;
+        public $city;
 
         public function getId() {
             return $this->id;

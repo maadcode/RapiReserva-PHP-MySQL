@@ -5,6 +5,7 @@
       $title = "";  
       include '../Components/head.php';
     ?>
+    <link rel="stylesheet" href="../Css/alert.css">
     <link rel="stylesheet" href="../Css/app.css">
 </head>
 <body>
@@ -34,6 +35,13 @@
             }
         ?>
     </main>
+
+    <div class="alert block" id="appAlert">
+        <div>
+            <i class='bx bxs-x-circle' id="closeLoginAlert"></i>
+            <span></span>
+        </div>  
+    </div>
     <script src="../Scripts/app.js" type="module"></script>
 </section>
 </body>

@@ -5,11 +5,12 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    color: #6086F7;
     font-weight: bold;
+    color: #c7c775;
 }
 
 .aside__logo span {
+    color: #6086F7;
     display: none;
 }
 

@@ -1,10 +1,10 @@
 <?php
     class ServiceDTO {
-        private $id;
-        private $description;
-        private $price;
-        private $duration;
-        private $category;
+        public $id;
+        public $description;
+        public $price;
+        public $duration;
+        public $category;
 
         public function getId() {
             return $this->id;

@@ -23,9 +23,9 @@
 
       <form action="../../Controllers/loginController.php" method="POST" id="form--sign-in" class="form block">
         <h2 class="title">Registrarte</h2>
-        <?php $name = "usernameSignup"; $icon = "bx bxs-user";      $typeInput = "text";    $placeholderInput = "Username"; include '../Components/control.php'; ?>
-        <?php $name = "emailSignup";    $icon = "bx bxs-envelope";  $typeInput = "email";   $placeholderInput = "Email";    include '../Components/control.php'; ?>
-        <?php $name = "passwordSignup"; $icon = "bx bxs-lock";      $typeInput = "password";$placeholderInput = "Password"; include '../Components/control.php'; ?>
+        <?php $isDisabled = false; $name = "usernameSignup"; $icon = "bx bxs-user";      $typeInput = "text";    $placeholderInput = "Username"; include '../Components/control.php'; ?>
+        <?php $isDisabled = false; $name = "emailSignup";    $icon = "bx bxs-envelope";  $typeInput = "email";   $placeholderInput = "Email";    include '../Components/control.php'; ?>
+        <?php $isDisabled = false; $name = "passwordSignup"; $icon = "bx bxs-lock";      $typeInput = "password";$placeholderInput = "Password"; include '../Components/control.php'; ?>
         <?php $nameButton = "btnSignup";$textButton = "Registrarte"; $isTransparent = false; include '../Components/button.php'; ?>
       </form>
     </div>
@@ -42,8 +42,8 @@
 
       <form action="../../Controllers/loginController.php" method="POST" id="form--sign-up" class="form">
         <h2 class="title">Iniciar Sesión</h2>
-        <?php $name = "usernameSignin"; $icon = "bx bxs-user";  $typeInput = "text";    $placeholderInput = "Username"; include '../Components/control.php'; ?>
-        <?php $name = "passwordSignin"; $icon = "bx bxs-lock";  $typeInput = "password";$placeholderInput = "Password"; include '../Components/control.php'; ?>
+        <?php $isDisabled = false; $name = "usernameSignin"; $icon = "bx bxs-user";  $typeInput = "text";    $placeholderInput = "Username"; include '../Components/control.php'; ?>
+        <?php $isDisabled = false; $name = "passwordSignin"; $icon = "bx bxs-lock";  $typeInput = "password";$placeholderInput = "Password"; include '../Components/control.php'; ?>
         <?php $nameButton = "btnSignin"; $textButton = "Iniciar sesión";  $isTransparent = false;   include '../Components/button.php'; ?>
         <a href="" class="form__link">Olvidé mi contraseña</a>
       </form>

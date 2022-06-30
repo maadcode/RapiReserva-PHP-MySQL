@@ -62,6 +62,8 @@ formSignup.addEventListener('submit', async (ev) => {
   };
   const data = await ajaxPost(url, values);
   if(data.Valid) {
+    localStorage.setItem('userName', data.Username);
+    localStorage.setItem('urlPhoto', data.UrlAvatar);
     formSignup.reset();
     const response = await saveToken(data.Id);
     if(response) {
