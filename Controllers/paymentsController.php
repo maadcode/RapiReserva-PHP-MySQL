@@ -7,4 +7,10 @@
             $jsonstring = json_encode($response);
             echo $jsonstring;
         }
+
+        if(isset($_GET['getPaymentPdf']) && isset($_GET['paymentId'])) {
+            require_once "../Services/servicePDF.php";
+            $servicePdf = new ServicePDF();
+            $response = $servicePdf->createPDF($_GET['paymentId']);
+        }
     }

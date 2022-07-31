@@ -4,7 +4,7 @@ sidebarButtons.forEach(button => {
   button.addEventListener("click", e => {
     if(e.target.classList.contains("logout") || e.target.parentElement.classList.contains("logout")) {
       e.preventDefault();
-      localStorage.setItem('tokenAuth', '');
+      localStorage.clear();
       window.location.replace("http://localhost/Projects/RapiReserva/Views/Pages/login.php");
     }
 

@@ -2,7 +2,19 @@
 
 <header class="header topbar">
     <div class="header--left">
-      <h2 class="header__title"><?= isset($_GET['page']) ? $_GET['page'] : 'dashboard' ?></h2>
+      <h2 class="header__title">
+        <?php
+          if(isset($_GET['page']) && $_GET['page'] == 'nuevaReserva') {
+            echo 'Nueva Reserva';
+          } else if (isset($_GET['page']) && $_GET['page'] == 'pago') {
+            echo 'Medio de pago';
+          } else if (isset($_GET['page']) && $_GET['page'] == 'verificar') {
+            echo 'Detalle de compra';
+          } else {
+            echo isset($_GET['page']) ? $_GET['page'] : 'dashboard';
+          }
+        ?>
+      </h2>
     </div>
     <div class="header--right">
       <span class="header__username ">Username</span>

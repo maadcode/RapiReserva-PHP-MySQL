@@ -20,6 +20,7 @@ export const validateToken = async () => {
         window.location.replace("http://localhost/Projects/RapiReserva/Views/Pages/app.php");
     } 
     if(!response.isValid && !window.location.href.includes('http://localhost/Projects/RapiReserva/Views/Pages/login.php')) {
+        localStorage.clear();
         window.location.replace("http://localhost/Projects/RapiReserva/Views/Pages/login.php");
     }
 }

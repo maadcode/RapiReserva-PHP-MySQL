@@ -5,6 +5,7 @@
         public $price;
         public $duration;
         public $category;
+        public $urlImage;
 
         public function getId() {
             return $this->id;
@@ -44,5 +45,13 @@
 
         public function setCategory($category) {
             $this->category = $category;
+        }
+
+        public function getUrlImage() {
+            return $this->category;
+        }
+
+        public function setUrlImage($urlImage) {
+            $this->urlImage = $urlImage;
         }
     }

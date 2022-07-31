@@ -24,15 +24,14 @@
         }
 
         public function getCategoryBydId($id) {
-            $category = new CategoryDTO();
+            $category = null;
             $sql = "SELECT Id, Description FROM Categories WHERE Id = ?";
             $statement = $this->connection->prepare($sql);
             $statement->bind_param("i", $id);
             $statement->execute();
             $response = $statement->get_result();
             while ($data = $response->fetch_assoc()) {
-                $category->setId($data["Id"]);
-                $category->setDescription($data["Description"]);
+                $category = $data["Description"];
             }
             $statement->close();
             return $category;

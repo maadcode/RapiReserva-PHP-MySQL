@@ -17,4 +17,22 @@
     </table>
 </section>
 
+<div class="alert block" id="servicesDetails">
+    <div>
+        <i class='bx bxs-x-circle' id="closeServicesDetails"></i>
+        <table class="data">
+            <thead>
+                <tr>
+                    <th>Servicio</th>
+                    <th>Categoría</th>
+                    <th>Duración</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>  
+</div>
+
 <script src="../Scripts/reservas.js" type="module"></script>

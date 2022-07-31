@@ -14,6 +14,9 @@
     <?php 
         if(isset($_GET['page'])) {
             $selected = $_GET['page'];
+            if($_GET['page'] == 'newReserve' || $_GET['page'] == 'calendario' || $_GET['page'] == 'pago' || $_GET['page'] == 'verificar') {
+                $selected = 'reservas';
+            }
         } else {
             $selected = "dashboard";
         }
@@ -32,6 +35,18 @@
             }
             if(isset($_GET['page']) && $_GET['page'] == "perfil") {
                 include '../Layouts/perfil.php';
+            }
+            if(isset($_GET['page']) && $_GET['page'] == "nuevaReserva") {
+                include '../Layouts/newReserve.php';
+            }
+            if(isset($_GET['page']) && $_GET['page'] == "calendario") {
+                include '../Layouts/calendar.php';
+            }
+            if(isset($_GET['page']) && $_GET['page'] == "pago") {
+                include '../Layouts/payment.php';
+            }
+            if(isset($_GET['page']) && $_GET['page'] == "verificar") {
+                include '../Layouts/verification.php';
             }
         ?>
     </main>

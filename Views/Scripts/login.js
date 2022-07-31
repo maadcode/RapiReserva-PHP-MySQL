@@ -69,12 +69,12 @@ formSignup.addEventListener('submit', async (ev) => {
     if(response) {
       window.location.replace("http://localhost/Projects/RapiReserva/Views/Pages/app.php");
     } else {
-      alertContainer.firstElementChild.lastElementChild.textContent = 'Ocurrió con el token de ingreso.';
+      alertContainer.firstElementChild.lastElementChild.textContent = 'No se pudo guardar el token de ingreso.';
       alertContainer.firstElementChild.classList.add('alert--error');
       alertContainer.classList.remove('block');
     }
   } else {
-    alertContainer.firstElementChild.lastElementChild.textContent = 'Ocurrió un error en el registro.';
+    alertContainer.firstElementChild.lastElementChild.textContent = 'Los datos de acceso no son válidos.';
     alertContainer.firstElementChild.classList.add('alert--error');
     alertContainer.classList.remove('block');
   }
